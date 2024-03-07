@@ -623,6 +623,13 @@ local bindings = {
 	{ 'ctrl+v',      function() paste(true) end             },
 	{ 'meta+v',      function() paste(true) end             },
 	{ 'ctrl+w',      del_word                               },
+
+	{ 'ctrl+a',      go_home                                },
+	{ 'ctrl+e',      go_end                                 },
+	{ 'alt+b',       prev_word                              },
+	{ 'alt+f',       next_word                              },
+	{ 'ctrl+p',          function() move_history(-1) end        },
+	{ 'ctrl+n',        function() move_history(1) end         },
 }
 -- Add bindings for all the printable US-ASCII characters from ' ' to '~'
 -- inclusive. Note, this is a pretty hacky way to do text input. mpv's input
@@ -638,7 +645,7 @@ add_repl_bindings(bindings)
 
 -- Add a global binding for enabling the REPL. While it's enabled, its bindings
 -- will take over and it can be closed with ESC.
-mp.add_key_binding('`', 'repl-enable', function()
+mp.add_key_binding(':', 'repl-enable', function()
 	set_active(true)
 end)
 
