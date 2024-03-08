@@ -626,10 +626,12 @@ local bindings = {
 
 	{ 'ctrl+a',      go_home                                },
 	{ 'ctrl+e',      go_end                                 },
+	{ 'ctrl+b',      function() prev_char() end             },
+	{ 'ctrl+f',      function() next_char() end             },
 	{ 'alt+b',       prev_word                              },
 	{ 'alt+f',       next_word                              },
-	{ 'ctrl+p',          function() move_history(-1) end        },
-	{ 'ctrl+n',        function() move_history(1) end         },
+	{ 'ctrl+p',      function() move_history(-1) end        },
+	{ 'ctrl+n',      function() move_history(1) end         },
 }
 -- Add bindings for all the printable US-ASCII characters from ' ' to '~'
 -- inclusive. Note, this is a pretty hacky way to do text input. mpv's input
